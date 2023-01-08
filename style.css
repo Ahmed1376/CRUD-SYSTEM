@@ -170,3 +170,19 @@ table button {
 table button:hover {
     color: var(--fontColor-color);
 }
+
+.up {
+    position: fixed;
+    bottom: 15px;
+    right: -150px;
+    color: var(--headFontColor-color);
+    font-size: 20px;
+    padding: 3px;
+    background-color: red;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.up.show {
+    right: 15px;
+}
