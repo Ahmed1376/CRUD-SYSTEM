@@ -11,6 +11,8 @@
     --backG-color: #f3ca6f;
     --headFontColor-color: #6eff69;
     --fontColor-color: #000016;
+    --texColor-color: #fff;
+    --backBTNground-color: rgba(86, 86, 251, 0.773);
 }
 
 body {
@@ -43,6 +45,8 @@ body {
     border-radius: 5px;
     border: none;
     outline: none;
+
+
 }
 
 input {
@@ -57,6 +61,8 @@ input {
     color: #000016;
     font-weight: 600;
     transition: 0.5s;
+
+
 }
 
 input:focus {
@@ -92,6 +98,20 @@ button {
 
 }
 
+.create {
+    cursor: pointer;
+    background-color: rgba(86, 86, 251, 0.773);
+    margin: 4px 0px;
+    border-radius: 50px;
+    transition: 0.5s ease;
+
+}
+
+.create:hover {
+    background-color: rgb(132, 132, 240);
+    letter-spacing: 1px;
+}
+
 .searchBtn {
     display: flex;
     justify-content: space-between;
@@ -99,14 +119,54 @@ button {
 }
 
 
-button {
+.searchBtn button {
     cursor: pointer;
-    background-color: blue;
+    background-color: rgba(86, 86, 251, 0.773);
     margin: 4px 0px;
     border-radius: 50px;
+    transition: 0.5s ease;
 
+}
+
+.searchBtn button:hover {
+    background-color: rgb(132, 132, 240);
+    letter-spacing: 1px;
 }
 
 .searchBtn button {
     width: 40%;
+}
+
+table {
+    margin-top: 20px;
+    width: 100%;
+    text-align: center;
+    color: var(--texColor-color);
+    font-size: 12.5px;
+}
+
+table th {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: wheat;
+
+}
+
+button {
+    color: var(--texColor-color);
+    font-weight: 700;
+}
+
+table button {
+    background-color: var(--backBTNground-color);
+    border-radius: 30px;
+    padding: 2px;
+    text-transform: lowercase;
+    cursor: pointer;
+    font-size: 12px;
+    transition: 0.5s ease;
+}
+
+table button:hover {
+    color: var(--fontColor-color);
 }
