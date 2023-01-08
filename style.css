@@ -40,7 +40,7 @@ body {
 
 .input input {
     margin: 4px 0px;
-    height: 30px;
+    height: 27.5px;
     padding: 5px;
     border-radius: 5px;
     border: none;
@@ -110,6 +110,8 @@ button {
 .create:hover {
     background-color: rgb(132, 132, 240);
     letter-spacing: 1px;
+    color: var(--fontColor-color);
+
 }
 
 .searchBtn {
@@ -131,6 +133,7 @@ button {
 .searchBtn button:hover {
     background-color: rgb(132, 132, 240);
     letter-spacing: 1px;
+    color: var(--fontColor-color);
 }
 
 .searchBtn button {
