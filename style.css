@@ -1,0 +1,112 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+:root {
+    --backG-color: #f3ca6f;
+    --headFontColor-color: #6eff69;
+    --fontColor-color: #000016;
+}
+
+body {
+    background-color: #000016;
+    color: #6eff69;
+}
+
+.crud {
+    width: 80%;
+    margin: auto;
+
+
+
+}
+
+.head {
+    text-align: center;
+    margin: 10px 0px 20px;
+}
+
+.head h2 {
+    font-size: 20px;
+}
+
+
+.input input {
+    margin: 4px 0px;
+    height: 30px;
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+}
+
+input {
+    margin: 4px 0px;
+    height: 30px;
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    width: 100%;
+    background-color: rgb(243, 202, 111);
+    color: #000016;
+    font-weight: 600;
+    transition: 0.5s;
+}
+
+input:focus {
+    background-color: rgb(253, 228, 175);
+    transform: scale(1.1);
+}
+
+.price {
+    display: flex;
+}
+
+.price input {
+    width: 20%;
+    margin-right: 9.5px;
+}
+
+small {
+    padding: 10px 4px;
+    background-color: var(--fontColor-color);
+    color: var(--headFontColor-color);
+    border-radius: 5px;
+    text-align: center;
+}
+
+small::before {
+    content: "Total : ";
+}
+
+button {
+    width: 100%;
+    height: 30px;
+    border-radius: 5px;
+
+}
+
+.searchBtn {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+
+button {
+    cursor: pointer;
+    background-color: blue;
+    margin: 4px 0px;
+    border-radius: 50px;
+
+}
+
+.searchBtn button {
+    width: 40%;
+}
