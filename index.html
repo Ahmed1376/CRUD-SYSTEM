@@ -21,24 +21,27 @@
         </div>
 
         <!-- the second div ==> input -->
-        <div class="input">
-            <input type="text" placeholder="Title" id="title">
-            <input type="text" placeholder="Category" id="category">
-            <div class="price">
-                <input type="number" placeholder="Price" id="price">
-                <input type="number" placeholder="Tax" id="tax">
-                <input type="number" placeholder="Ads" id="ads">
-                <input type="number" placeholder="Discount" id="discount">
-                <small class="total">12345</small>
+        <form action="">
+            <input onkeyup=" resetAll ()" type="reset" class="reset" id="resBtn">
+            <div class="input">
+                <input type="text" placeholder="Title" id="title">
+                <input type="text" placeholder="Category" id="category">
+                <div class="price">
+                    <input onkeyup="  theTotal ()" type="number" placeholder="Price" id="price">
+                    <input onkeyup="  theTotal ()" type="number" placeholder="Tax" id="tax">
+                    <input onkeyup="  theTotal ()" type="number" placeholder="Ads" id="ads">
+                    <input onkeyup="  theTotal ()" type="number" placeholder="Discount" id="discount">
+                    <small onkeyup="  theTotal ()" class="total1" id="total"></small>
+                </div>
+                <input type="number" placeholder="Count" id="count">
+                <button class="create" id="createBTN">Create</button>
             </div>
-            <input type="number" placeholder="Count">
-            <button class="create">Create</button>
-        </div>
+        </form>
 
         <!-- the third div ==> output -->
         <div class="output">
             <div class="sarchMain">
-                <input type="text" placeholder="Search">
+                <input type="text" placeholder="Search" id="search">
                 <div class="searchBtn">
                     <button class="searchByTitle">Search By Title</button>
                     <button class="searchByCateogry">Search By Category</button>

@@ -18,6 +18,7 @@
 body {
     background-color: #000016;
     color: #6eff69;
+    color: red;
 }
 
 .crud {
@@ -140,6 +141,13 @@ button {
     width: 40%;
 }
 
+.reset {
+    width: auto;
+    background-color: rgb(200, 0, 255);
+    cursor: pointer;
+    border-radius: 50%;
+}
+
 table {
     margin-top: 20px;
     width: 100%;
@@ -148,10 +156,15 @@ table {
     font-size: 12.5px;
 }
 
-table th {
+table tr,
+th {
     text-transform: uppercase;
     letter-spacing: 2px;
     color: wheat;
+    color: rgb(255, 0, 0);
+    color: rgb(0, 255, 4);
+    /* margin-top: 20px; */
+
 
 }
 
