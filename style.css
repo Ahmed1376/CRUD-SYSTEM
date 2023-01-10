@@ -80,7 +80,7 @@ input:focus {
     margin-right: 9.5px;
 }
 
-small {
+.total1 {
     padding: 10px 4px;
     background-color: var(--fontColor-color);
     color: var(--headFontColor-color);
@@ -88,7 +88,7 @@ small {
     text-align: center;
 }
 
-small::before {
+.total1::before {
     content: "Total : ";
 }
 
@@ -105,6 +105,7 @@ button {
     margin: 4px 0px;
     border-radius: 50px;
     transition: 0.5s ease;
+    width: 100%;
 
 }
 
@@ -124,7 +125,9 @@ button {
 
 .searchBtn button {
     cursor: pointer;
-    background-color: rgba(86, 86, 251, 0.773);
+    background-color: var(--backG-color);
+    color: var(--fontColor-color);
+    font-weight: bold;
     margin: 4px 0px;
     border-radius: 50px;
     transition: 0.5s ease;
@@ -141,12 +144,29 @@ button {
     width: 40%;
 }
 
-.reset {
+/* .reset {
     width: auto;
     background-color: rgb(200, 0, 255);
     cursor: pointer;
     border-radius: 50%;
+} */
+
+.click {
+    cursor: pointer;
+    background-color: rgba(86, 86, 251, 0.773);
+    margin: 4px 0px;
+    border-radius: 50px;
+    transition: 0.5s ease;
+    width: 100%;
 }
+
+.click:hover {
+    background-color: rgb(132, 132, 240);
+    letter-spacing: 1px;
+    color: var(--fontColor-color);
+
+}
+
 
 table {
     margin-top: 20px;

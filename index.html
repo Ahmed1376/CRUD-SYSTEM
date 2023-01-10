@@ -21,9 +21,10 @@
         </div>
 
         <!-- the second div ==> input -->
+
         <form action="">
-            <input onkeyup=" resetAll ()" type="reset" class="reset" id="resBtn">
-            <div class="input">
+            <!-- <input onkeyup=" resetAll ()" type="reset" class="reset" id="resBtn"> -->
+            <div class="input" id="allInput">
                 <input type="text" placeholder="Title" id="title">
                 <input type="text" placeholder="Category" id="category">
                 <div class="price">
@@ -32,9 +33,11 @@
                     <input onkeyup="  theTotal ()" type="number" placeholder="Ads" id="ads">
                     <input onkeyup="  theTotal ()" type="number" placeholder="Discount" id="discount">
                     <small onkeyup="  theTotal ()" class="total1" id="total"></small>
+                    <!-- <small onkeyup="  theTotal ()" class="total1" id="total"></small> -->
                 </div>
                 <input type="number" placeholder="Count" id="count">
-                <button class="create" id="createBTN">Create</button>
+                <button class="create" id="createBTN">Create</button> <br>
+                <button onclick="cl()" class="click">Reset</button>
             </div>
         </form>
 

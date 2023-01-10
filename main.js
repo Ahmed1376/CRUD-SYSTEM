@@ -23,7 +23,7 @@ let tax = document.getElementById("tax");
 let ads = document.getElementById("ads")
 let discount = document.getElementById("discount");
 let total = document.getElementById("total");
-let count = document.querySelector("count");
+let count = document.querySeletotalctor("count");
 let createBTN = document.getElementById("createBTN");
 // console.log(title, category, total, create);
 
@@ -33,27 +33,27 @@ let createBTN = document.getElementById("createBTN");
 //         let result = (+price.value + +tax.value + +ads.value) - +discount.value;
 //         total.innerHTML = result;
 //     }
+/// ====> play by JS to get same result
+
+// function theTotal() {
+//     total.innerHTML = (+price.value + +tax.value + +ads.value) - +discount.value;
+// }
+
+// =====> 
 // }
 // let theTotal = function () {
 //     console.log("test")
 //     if (price.value != "") {
-//         let result = (+price.value + +tax.value + +ads.value) - +discount.value;
-//         total.innerHTML = result;
+//         let totalOperation = (+price.value + +tax.value + +ads.value) - +discount.value;
+//         total.innerHTML = totalOperation;
 //     }
 // }
 // ===========> try another if condation way
-let theTotal = function () {
+function theTotal() {
 
-    if (price.value = price.value) {
-        let result = (+price.value + +tax.value + +ads.value) - +discount.value;
-        total.innerHTML = result;
+    if (price.value = price.value)// ===> just to make sure to fill the price input
+    {
+        totalOperation = (+price.value + +tax.value + +ads.value) - +discount.value;
+        total.innerHTML = totalOperation;
     }
 }
-
-// let theReset = document.getElementById("resBtn");
-// function resetAll() {
-//     if (theReset.onclick = theReset.onclick) {
-//         total.value = " ";
-//     }
-
-// }
