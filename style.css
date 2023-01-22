@@ -83,7 +83,10 @@ input:focus {
 .total1 {
     padding: 10px 4px;
     background-color: var(--fontColor-color);
-    color: var(--headFontColor-color);
+    /* color: var(--headFontColor-color); */
+    /* color: #6eff69; */
+    color: #ff0505;
+    font-weight: 700;
     border-radius: 5px;
     text-align: center;
 }
@@ -180,11 +183,8 @@ table tr,
 th {
     text-transform: uppercase;
     letter-spacing: 2px;
-    color: wheat;
-    color: rgb(255, 0, 0);
     color: rgb(0, 255, 4);
-    /* margin-top: 20px; */
-
+    padding-bottom: 15px;
 
 }
 
@@ -205,6 +205,11 @@ table button {
 
 table button:hover {
     color: var(--fontColor-color);
+}
+
+table th {
+    color: #fff;
+    margin-bottom: 70px;
 }
 
 .up {

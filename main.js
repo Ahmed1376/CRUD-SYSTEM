@@ -23,7 +23,7 @@ let tax = document.getElementById("tax");
 let ads = document.getElementById("ads")
 let discount = document.getElementById("discount");
 let total = document.getElementById("total");
-let count = document.querySeletotalctor("count");
+let count = document.querySelector("count");
 let createBTN = document.getElementById("createBTN");
 // console.log(title, category, total, create);
 
@@ -55,5 +55,9 @@ function theTotal() {
     {
         totalOperation = (+price.value + +tax.value + +ads.value) - +discount.value;
         total.innerHTML = totalOperation;
+        total.style.color = '#6eff69';//green
+    } else {
+        total.style.color = 'ff0505';// red
     }
+
 }
