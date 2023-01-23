@@ -24,8 +24,8 @@ let ads = document.getElementById("ads")
 let discount = document.getElementById("discount");
 let total = document.getElementById("total");
 let count = document.querySelector("count");
-let createBTN = document.getElementById("createBTN");
-// console.log(title, category, total, create);
+let submit = document.getElementById("submit");
+// console.log(title, category, price, tax, ads, discount, total, createBtn,);
 
 // ========> count the price => total
 // function theTotal() {
@@ -56,8 +56,35 @@ function theTotal() {
         totalOperation = (+price.value + +tax.value + +ads.value) - +discount.value;
         total.innerHTML = totalOperation;
         total.style.color = '#6eff69';//green
-    } else {
+    } else
         total.style.color = 'ff0505';// red
-    }
+};
+//=============> create data
+let productsAll = [];
 
+submit.onclick = function () {
+    let objPro = {
+        title: title.value,
+        category: category.value,
+        price: price.value,
+        tax: tax.value,
+        ads: ads.value,
+        discount: discount.value,
+        total: total.innerHTML,
+        count: count.value,
+    }
+    // productsAll.push(objPro);
+    console.log(objPro);
 }
+
+
+// let objPro = {
+//     title: title.value,
+//     category: category.value,
+//     price: price.value,
+//     tax: tax.value,
+//     ads: ads.value,
+//     discount: discount.value,
+//     total: total.innerHTML,
+// };
+// console.log(objPro);

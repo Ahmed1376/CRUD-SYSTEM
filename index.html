@@ -33,11 +33,10 @@
                     <input onkeyup="  theTotal ()" type="number" placeholder="Ads" id="ads">
                     <input onkeyup="  theTotal ()" type="number" placeholder="Discount" id="discount">
                     <small onkeyup="  theTotal ()" class="total1" id="total"></small>
-                    <!-- <small onkeyup="  theTotal ()" class="total1" id="total"></small> -->
                 </div>
                 <input type="number" placeholder="Count" id="count">
-                <button class="create" id="createBTN">Create</button> <br>
-                <button onclick="cl()" class="click">Reset</button>
+                <button class="create" id="submit">Create</button>
+                <button class="click">Reset</button>
             </div>
         </form>
 
@@ -46,7 +45,7 @@
             <div class="sarchMain">
                 <input type="text" placeholder="Search" id="search">
                 <div class="searchBtn">
-                    <button class="searchByTitle">Search By Title</button>
+                    <button class="searchByTitle" id="searchBytit">Search By Title</button>
                     <button class="searchByCateogry">Search By Category</button>
                 </div>
             </div>
