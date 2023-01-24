@@ -12,16 +12,26 @@
 // console.log(title, category, price, tax, ads, discount, total, count, search);
 // ==============> create Btn
 
-let up = document.getElementById("upBtn")
-console.log(this.scrollY);
+let scrolBtn = document.getElementById(".upBtn")
+// console.log(this.scrollY);
+// window.onscroll = function () {
+//     if (this.scrollY >= 300) {
+//         up.classList.add("show")
+//     } else
+//         up.classList.remove("show")
+// };
+
+// ==========
 window.onscroll = function () {
-    if (this.scrollY >= 300) {
-        up.classList.add(".show")
-    } else
-        up.classList.remove(".show")
+    if (this.scrollY >= 200) {
+        scrolBtn.classList.add("show");
+
+    } else scrolBtn.classList.remove("show");
+}
+scrolBtn.onclick = function () {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    })
 };
-
-// up.onclick({
-//     top: 0,
-
-// });
+// ================
