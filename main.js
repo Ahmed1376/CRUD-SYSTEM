@@ -16,9 +16,9 @@ let up = document.getElementById("upBtn")
 console.log(this.scrollY);
 window.onscroll = function () {
     if (this.scrollY >= 300) {
-        up.style.display = 'block'
+        up.classList.add(".up")
     } else
-        up.style.display = 'none'
+        up.classList.remove(".up")
 };
 
 // up.onclick({
