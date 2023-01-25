@@ -219,7 +219,8 @@ table th {
 .up {
     position: fixed;
     bottom: 15px;
-    right: -150px;
+    /* right: -150px; */
+    right: 15px;
     color: var(--headFontColor-color);
     font-size: 20px;
     padding: 3px;
@@ -228,6 +229,6 @@ table th {
     border-radius: 5px;
 }
 
-.up.show {
+/* .up.show {
     right: 15px;
-}
+} */
