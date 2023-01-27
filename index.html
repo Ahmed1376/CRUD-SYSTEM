@@ -28,14 +28,14 @@
                 <input type="text" placeholder="Title" id="title">
                 <input type="text" placeholder="Category" id="category">
                 <div class="price">
-                    <input type="number" placeholder="Price" id="price">
-                    <input type="number" placeholder="Tax" id="tax">
-                    <input type="number" placeholder="Ads" id="ads">
-                    <input type="number" placeholder="Discount" id="discount">
+                    <input onkeyup="totalOperation ()" type="number" placeholder="Price" id="price">
+                    <input onkeyup="totalOperation ()" type="number" placeholder="Tax" id="tax">
+                    <input onkeyup="totalOperation ()" type="number" placeholder="Ads" id="ads">
+                    <input onkeyup="totalOperation ()" type="number" placeholder="Discount" id="discount">
                     <small class="total1" id="total"></small>
                 </div>
                 <input type="number" placeholder="Count" id="count">
-                <div class="create" id="submit">Create</div>
+                <div class="create" id="create">Create</div>
                 <button class="click">Reset</button>
             </div>
         </form>
