@@ -56,7 +56,7 @@ function totalOperation() {
 };
 
 // =================> CREATE THE DATA 
-allProducts = [];   //// the problem is JS read the code from up to down, so when I click the      Btn create will save only the last values AS the array is located up and empety !!.
+allProducts = [];   //// the problem is JS read the code from up to down, so when I click the Btn create will save only the last values AS the array is located up and empety !!.
 if (localStorage.product != null) {
     allProducts = JSON.parse(localStorage.product)
 } else {
@@ -73,14 +73,26 @@ create.onclick = function () {
         discount: discount.value,
         total: total.innerHTML,
         count: count.value,
-    };
+
+    }
     allProducts.push(typeDevice);
     localStorage.product = JSON.stringify(allProducts);
-
+    // clearData()
 };
 
 // localStorage.clear();
 // localStorage.removeItem('AhmedDiab');
+
+// function clearData() {
+//     title.value = '';
+//     category.value = '';
+//     price.value = '';
+//     tax.value = '';
+//     ads.value = '';
+//     discount.value = '';
+//     total.innerHTML = '';
+//     count.value = '';
+// }
 
 
 

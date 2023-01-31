@@ -151,23 +151,17 @@ button {
     width: 40%;
 }
 
-/* .reset {
-    width: auto;
-    background-color: rgb(200, 0, 255);
-    cursor: pointer;
-    border-radius: 50%;
-} */
-
-.click {
+.Clean {
     cursor: pointer;
     background-color: rgba(86, 86, 251, 0.773);
     margin: 4px 0px;
     border-radius: 50px;
     transition: 0.5s ease;
     width: 100%;
+    font-size: 15px;
 }
 
-.click:hover {
+.Clean:hover {
     background-color: rgb(132, 132, 240);
     letter-spacing: 1px;
     color: var(--fontColor-color);
