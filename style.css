@@ -179,7 +179,6 @@ table {
     margin-top: 20px;
     width: 100%;
     text-align: center;
-    color: var(--texColor-color);
     font-size: 12.5px;
 }
 
@@ -187,7 +186,8 @@ table tr,
 th {
     text-transform: uppercase;
     letter-spacing: 2px;
-    color: rgb(0, 255, 4);
+    /* color: rgb(0, 255, 4); */
+    color: #e3f425;
     padding-bottom: 15px;
 
 }

@@ -19,7 +19,6 @@ let scrBtn = document.querySelector(".up");
 window.onscroll = function () {
     if (this.scrollY >= 150) {
         scrBtn.classList.add("show");
-
     } else scrBtn.classList.remove("show");
 }
 scrBtn.onclick = function () {
@@ -49,19 +48,20 @@ function totalOperation() {
     // if (price.value === price.value) 
     // if (price.value != '')                           
     if (price.value != null) {
-        let totalSum = (+price.value + +tax.value + +ads.value) - discount.value
+        let totalSum = (+price.value + +tax.value + +ads.value) - discount.value;
         total.innerHTML = totalSum;
         // totalSum = total.innerHTML;    ======> does not work
         total.style.color = 'rgb(0, 255, 4)'
     } else total.style.color = ' #ff0505'
 };
 
-// =================> CREATION ===> onclick => function => object => array => array.push >>theObject => localStorage => keep the array fill with data by if =>
-
-allProducts = [];
-if (localStorage.product != '') {
-    allProducts = JSON.parse(JSON.stringify(allProducts))
-} else localStorage = [];
+// =================> CREATE THE DATA 
+allProducts = [];   //// the problem is JS read the code from up to down, so when I click the      Btn create will save only the last values AS the array is located up and empety !!.
+if (localStorage.product != null) {
+    allProducts = JSON.parse(localStorage.product)
+} else {
+    allProducts = []
+};
 
 create.onclick = function () {
     let typeDevice = {
@@ -75,9 +75,11 @@ create.onclick = function () {
         count: count.value,
     };
     allProducts.push(typeDevice);
-    localStorage.MOhamedOso = (JSON.stringify(allProducts));
+    localStorage.product = JSON.stringify(allProducts);
 
 };
+
+// localStorage.clear();
 // localStorage.removeItem('AhmedDiab');
 
 
