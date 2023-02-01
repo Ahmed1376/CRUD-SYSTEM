@@ -32,7 +32,7 @@ scrBtn.onclick = function () {
 // let btnScrollY = document.getElementById("upBtn");
 // console.log(this.scrollY);
 // window.onscroll = function () {
-//     if (this.scrollY >= 180) {
+//     if (this.scrollY >= 150) {
 //         btnScrollY.style.display = 'block';
 //     } else btnScrollY.style.display = 'none';
 // }
@@ -45,9 +45,8 @@ scrBtn.onclick = function () {
 
 // ==============> operation 
 function totalOperation() {
-    // if (price.value === price.value) 
-    // if (price.value != '')                           
-    if (price.value != null) {
+    // if (price.value === price.value)                          
+    if (price.value != '') {
         let totalSum = (+price.value + +tax.value + +ads.value) - discount.value;
         total.innerHTML = totalSum;
         // totalSum = total.innerHTML;    ======> does not work
@@ -58,16 +57,17 @@ function totalOperation() {
 // =================> CREATE THE DATA 
 allProducts = [];   //// the problem is JS read the code from up to down, so when I click the Btn create will save only the last values AS the array is located up and empety !!.
 if (localStorage.product != null) {
-    allProducts = JSON.parse(localStorage.product)
+    // allProducts = JSON.parse(localStorage.product)
+    allProducts.push(JSON.parse(localStorage.product));
 } else {
     allProducts = []
 };
 
 create.onclick = function () {
     let typeDevice = {
-        title: title.value,
-        category: category.value,
-        price: price.value,
+        theTitle: title.value,
+        theCategory: category.value,
+        thePrice: price.value,
         tax: tax.value,
         ads: ads.value,
         discount: discount.value,
@@ -76,12 +76,14 @@ create.onclick = function () {
 
     }
     allProducts.push(typeDevice);
-    localStorage.product = JSON.stringify(allProducts);
+    // localStorage.productTv = JSON.stringify(allProducts);
+    // localStorage.productMobile = JSON.stringify(allProducts);
+    localStorage.productLap = JSON.stringify(allProducts);
     // clearData()
 };
 
 // localStorage.clear();
-// localStorage.removeItem('AhmedDiab');
+// localStorage.removeItem('productLap');
 
 // function clearData() {
 //     title.value = '';
