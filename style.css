@@ -18,7 +18,7 @@
 body {
     background-color: #000016;
     color: #6eff69;
-    color: red;
+    /* color: red; */
 }
 
 .crud {
@@ -134,11 +134,12 @@ button {
     cursor: pointer;
     background-color: var(--backG-color);
     color: var(--fontColor-color);
+    color: var(--texColor-color);
     font-weight: bold;
     margin: 4px 0px;
     border-radius: 50px;
     transition: 0.5s ease;
-
+    background-color: rgba(86, 86, 251, 0.773);
 }
 
 .searchBtn button:hover {
