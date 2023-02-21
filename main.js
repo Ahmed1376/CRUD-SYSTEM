@@ -59,9 +59,7 @@ allProducts = [];   //// the problem is JS read the code from up to down, so whe
 if (localStorage.product != null) {
     // allProducts = JSON.parse(localStorage.product)
     allProducts.push(JSON.parse(localStorage.product));
-} else {
-    allProducts = []
-};
+}
 
 create.onclick = function () {
     let typeDevice = {
@@ -78,13 +76,23 @@ create.onclick = function () {
     allProducts.push(typeDevice);
     // localStorage.productTv = JSON.stringify(allProducts);
     // localStorage.productMobile = JSON.stringify(allProducts);
-    localStorage.productLap = JSON.stringify(allProducts);
-    // clearData()
+    localStorage.computers = (JSON.stringify(allProducts));
+
 };
 
 // localStorage.clear();
 // localStorage.removeItem('productLap');
 
+let fruits = ['apple', 'orange', 'banana', 20, 45, 'watermelon', 'date']
+let testMerge = ['coco', 'wawa', 'non', 'kaka', 33];
+// console.log(fruits);
+console.log(fruits.concat(testMerge));
+console.log(testMerge);
+// let fruMergTes = (fruits.concat(testMerge));
+// console.log(fruMergTes);
+// console.log(fruMergTes.sort());
+
+// ======> function to clear the inputs'data [ canceled and replaced by HTML reset]
 // function clearData() {
 //     title.value = '';
 //     category.value = '';
@@ -94,13 +102,4 @@ create.onclick = function () {
 //     discount.value = '';
 //     total.innerHTML = '';
 //     count.value = '';
-// }
-
-
-
-
-
-
-
-
-
+// };
