@@ -77,29 +77,23 @@ create.onclick = function () {
     // localStorage.productTv = JSON.stringify(allProducts);
     // localStorage.productMobile = JSON.stringify(allProducts);
     localStorage.computers = (JSON.stringify(allProducts));
+    clearInputes();
 
 };
 
 // localStorage.clear();
 // localStorage.removeItem('productLap');
 
-let fruits = ['apple', 'orange', 'banana', 20, 45, 'watermelon', 'date']
-let testMerge = ['coco', 'wawa', 'non', 'kaka', 33];
-// console.log(fruits);
-console.log(fruits.concat(testMerge));
-console.log(testMerge);
-// let fruMergTes = (fruits.concat(testMerge));
-// console.log(fruMergTes);
-// console.log(fruMergTes.sort());
-
 // ======> function to clear the inputs'data [ canceled and replaced by HTML reset]
-// function clearData() {
-//     title.value = '';
-//     category.value = '';
-//     price.value = '';
-//     tax.value = '';
-//     ads.value = '';
-//     discount.value = '';
-//     total.innerHTML = '';
-//     count.value = '';
-// };
+
+function clearInputes() {
+    title.value = '';
+    category.value = ""
+    price.value = '';
+    tax.value = '';
+    ads.value = '';
+    discount.value = '';
+    total.innerHTML = '';
+    count.value = '';
+    search.value = '';
+}
