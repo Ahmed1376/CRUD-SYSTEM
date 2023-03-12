@@ -76,15 +76,10 @@ create.onclick = function () {
     allProducts.push(typeDevice);
     // localStorage.productTv = JSON.stringify(allProducts);
     // localStorage.productMobile = JSON.stringify(allProducts);
-    localStorage.computers = (JSON.stringify(allProducts));
+    localStorage.setItem('proStore', JSON.stringify(allProducts));
     clearInputes();
 
 };
-
-// localStorage.clear();
-// localStorage.removeItem('productLap');
-
-// ======> function to clear the inputs'data [ canceled and replaced by HTML reset]
 
 function clearInputes() {
     title.value = '';
@@ -97,3 +92,7 @@ function clearInputes() {
     count.value = '';
     search.value = '';
 }
+// localStorage.clear();
+// localStorage.removeItem('productLap');
+
+// ======> function to clear the inputs'data [ canceled and replaced by HTML reset]

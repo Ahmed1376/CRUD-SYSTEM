@@ -18,7 +18,7 @@
 body {
     background-color: #000016;
     color: #6eff69;
-    /* color: red; */
+
 }
 
 .crud {
@@ -81,8 +81,6 @@ input:focus {
 .total1 {
     padding: 10px 4px;
     background-color: var(--fontColor-color);
-    /* color: var(--headFontColor-color); */
-    /* color: #6eff69; */
     color: #ff0505;
     font-weight: 700;
     border-radius: 5px;
@@ -97,6 +95,8 @@ button {
     width: 100%;
     height: 30px;
     border-radius: 5px;
+    border: none;
+    outline: none;
 
 }
 
@@ -124,7 +124,7 @@ button {
 .searchBtn {
     display: flex;
     justify-content: space-between;
-    width: 100%;
+
 }
 
 
@@ -138,6 +138,8 @@ button {
     border-radius: 50px;
     transition: 0.5s ease;
     background-color: rgba(86, 86, 251, 0.773);
+    border: none;
+    outline: none;
 }
 
 .searchBtn button:hover {
@@ -179,7 +181,6 @@ table tr,
 th {
     text-transform: uppercase;
     letter-spacing: 2px;
-    /* color: rgb(0, 255, 4); */
     color: #e3f425;
     padding-bottom: 15px;
 
