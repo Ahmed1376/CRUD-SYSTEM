@@ -56,9 +56,8 @@ function totalOperation() {
 
 // =================> CREATE THE DATA 
 allPro = [];   //// the problem is JS read the code from up to down, so when I click the Btn create will save only the last values AS the array is located up and empety !!.
-if (localStorage.product != null) {
-    // allPro = JSON.parse(localStorage.product)
-    allPro.push(JSON.parse(localStorage.product));
+if (localStorage.proStore != null) {
+    allPro.push(JSON.parse(localStorage.proStore));
 }
 
 create.onclick = function () {
@@ -93,7 +92,10 @@ function clearInputes() {
     search.value = '';
 }
 // localStorage.clear();
+
 // localStorage.removeItem('productLap');
 
 // ======> function to clear the inputs'data [ canceled and replaced by HTML reset]
+// console.log(localStorage.getItem(JSON.parse(proStore)));
+console.log(allPro);
 
