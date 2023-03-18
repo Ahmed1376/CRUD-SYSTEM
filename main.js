@@ -44,8 +44,9 @@ scrBtn.onclick = function () {
 // };
 
 // ==============> operation 
+
 function totalOperation() {
-    // if (price.value === price.value)                          
+    // if (price === price.value)                          
     if (price.value != '') {
         let totalSum = (+price.value + +tax.value + +ads.value) - discount.value;
         total.innerHTML = totalSum;
@@ -55,31 +56,31 @@ function totalOperation() {
 };
 
 // =================> CREATE THE DATA 
-allPro = [];   //// the problem is JS read the code from up to down, so when I click the Btn create will save only the last values AS the array is located up and empety !!.
-if (localStorage.proStore != null) {
-    allPro.push(JSON.parse(localStorage.proStore));
+let dataArray;
+if (localStorage.ahmedStore != null) {
+    dataArray = JSON.parse(localStorage.ahmedStore);
+} else {
+    dataArray = [];
 }
 
 create.onclick = function () {
-    let typeDevice = {
-        theTitle: title.value,
-        theCategory: category.value,
-        thePrice: price.value,
+    objProduct = {
+        title: title.value,
+        category: category.value,
+        price: price.value,
         tax: tax.value,
         ads: ads.value,
         discount: discount.value,
         total: total.innerHTML,
         count: count.value,
-
-    }
-    allPro.push(typeDevice);
-    // localStorage.productTv = JSON.stringify(allPro);
-    // localStorage.productMobile = JSON.stringify(allPro);
-    localStorage.setItem('proStore', JSON.stringify(allPro));
+    };
+    dataArray.push(objProduct)
+    localStorage.setItem('ahmedStore', JSON.stringify(dataArray));
+    console.log(objProduct);
     clearInputes();
-
-};
-
+    dataShow();
+}
+// ====================> clear
 function clearInputes() {
     title.value = '';
     category.value = ""
@@ -92,10 +93,56 @@ function clearInputes() {
     search.value = '';
 }
 // localStorage.clear();
-
 // localStorage.removeItem('productLap');
+// localStorage.removeItem('product');
 
-// ======> function to clear the inputs'data [ canceled and replaced by HTML reset]
-// console.log(localStorage.getItem(JSON.parse(proStore)));
-console.log(allPro);
+// =========================================================================
+function dataShow() {
+    let theTable = '';
+    for (let i = 0; i < dataArray.length; i++) {
 
+        theTable += `
+
+<tr>
+        <td>${i}</td>
+        <td>${dataArray[i].title}</td>
+        <td>${dataArray[i].category}</td>
+        <td>${dataArray[i].price}</td>
+        <td>${dataArray[i].tax}</td>
+        <td>${dataArray[i].ads}</td>
+        <td>${dataArray[i].discount}</td>
+        <td>${dataArray[i].total}</td>
+        <td><button>UPDATE</button></td>
+        <td><button>DELETE</button></td>
+ </tr>
+ `
+
+    }
+
+    document.getElementById('tbody1').innerHTML = theTable;
+}
+dataShow();
+// ===============================
+// function dataShow() {
+//     let theTable = '';
+//     for (let i = 0; i < allPro.length; i++) {
+//         // theTable = allPro[i].title;
+//         // console.log(theTable);
+//         theTable += `
+//                 <tr>
+//                 <td>${i}</td>
+//                 <td>${allPro[i].title}</td>
+//                 <td>${allPro[i].category}</td>
+//                 <td>${allPro[i].price}</td>
+//                 <td>${allPro[i].tax}</td>
+//                 <td>${allPro[i].ads}</td>
+//                 <td>${allPro[i].discount}</td>
+//                 <td>${allPro[i].total}</td>
+//                 <td><button>UPDATE</button></td>
+//                 <td><button>DELETE</button></td>
+//             </tr>
+//          `
+//     }
+//     document.getElementById('tbody1').innerHTML = theTable;
+// }
+// dataShow();

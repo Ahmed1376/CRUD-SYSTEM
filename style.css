@@ -18,7 +18,7 @@
 body {
     background-color: #000016;
     color: #6eff69;
-
+    height: 3000px;
 }
 
 .crud {
@@ -150,6 +150,7 @@ button {
 
 .searchBtn button {
     width: 40%;
+
 }
 
 .Clean {
@@ -189,6 +190,7 @@ th {
 button {
     color: var(--texColor-color);
     font-weight: 700;
+
 }
 
 table button {
