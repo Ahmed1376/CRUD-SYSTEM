@@ -102,47 +102,22 @@ function dataShow() {
     for (let i = 0; i < dataArray.length; i++) {
 
         theTable += `
-
-<tr>
-        <td>${i}</td>
-        <td>${dataArray[i].title}</td>
-        <td>${dataArray[i].category}</td>
-        <td>${dataArray[i].price}</td>
-        <td>${dataArray[i].tax}</td>
-        <td>${dataArray[i].ads}</td>
-        <td>${dataArray[i].discount}</td>
-        <td>${dataArray[i].total}</td>
-        <td><button>UPDATE</button></td>
-        <td><button>DELETE</button></td>
- </tr>
- `
-
+                <tr>
+                        <td>${i}</td>
+                        <td>${dataArray[i].title}</td>
+                        <td>${dataArray[i].category}</td>
+                        <td>${dataArray[i].price}</td>
+                        <td>${dataArray[i].tax}</td>
+                        <td>${dataArray[i].ads}</td>
+                        <td>${dataArray[i].discount}</td>
+                        <td>${dataArray[i].total}</td>
+                        <td><button>UPDATE</button></td>
+                        <td><button>DELETE</button></td>
+                </tr>
+                `
     }
-
     document.getElementById('tbody1').innerHTML = theTable;
 }
 dataShow();
-// ===============================
-// function dataShow() {
-//     let theTable = '';
-//     for (let i = 0; i < allPro.length; i++) {
-//         // theTable = allPro[i].title;
-//         // console.log(theTable);
-//         theTable += `
-//                 <tr>
-//                 <td>${i}</td>
-//                 <td>${allPro[i].title}</td>
-//                 <td>${allPro[i].category}</td>
-//                 <td>${allPro[i].price}</td>
-//                 <td>${allPro[i].tax}</td>
-//                 <td>${allPro[i].ads}</td>
-//                 <td>${allPro[i].discount}</td>
-//                 <td>${allPro[i].total}</td>
-//                 <td><button>UPDATE</button></td>
-//                 <td><button>DELETE</button></td>
-//             </tr>
-//          `
-//     }
-//     document.getElementById('tbody1').innerHTML = theTable;
-// }
-// dataShow();
+// ======================>
+
