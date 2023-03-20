@@ -112,12 +112,19 @@ function dataShow() {
                         <td>${dataArray[i].discount}</td>
                         <td>${dataArray[i].total}</td>
                         <td><button>UPDATE</button></td>
-                        <td><button>DELETE</button></td>
+                        <td><button onclick="deletDataBtn(${i})" >DELETE</button></td>
                 </tr>
                 `
     }
     document.getElementById('tbody1').innerHTML = theTable;
 }
 dataShow();
-// ======================>
+// ======================>  Delete fuction
+
+function deletDataBtn(i) {
+    // console.log(i);
+    dataArray.splice(i);
+    localStorage.ahmedStore = (JSON.stringify(dataArray));
+    dataShow();
+}
 
