@@ -112,7 +112,7 @@ function dataShow() {
                         <td>${dataArray[i].discount}</td>
                         <td>${dataArray[i].total}</td>
                         <td><button>UPDATE</button></td>
-                        <td><button onclick="deletDataBtn(${i})" >DELETE</button></td>
+                        <td><button onclick="deletDataBtn(${i})" id="delete" >DELETE</button></td>
                 </tr>
                 `
     }
@@ -127,4 +127,9 @@ function deletDataBtn(i) {
     localStorage.ahmedStore = (JSON.stringify(dataArray));
     dataShow();
 }
+
+
+// =========================> Delete All Data Btn
+
+
 
