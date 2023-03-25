@@ -1,4 +1,4 @@
-// ==========> check the Ids
+// =========================> check the Ids
 
 let title = document.getElementById("title");
 let category = document.getElementById("category");
@@ -12,7 +12,8 @@ let count = document.getElementById("count");
 let search = document.getElementById("search");
 // console.log(title, category, price, tax, ads, discount, total, count, search);
 
-// ==============> create Btn
+
+// =========================> create Btn
 // let scrBtn = document.getElementById("upBtn");
 let scrBtn = document.querySelector(".up");
 // console.log(this.scrollY);
@@ -28,7 +29,8 @@ scrBtn.onclick = function () {
     })
 };
 
-// ================  Btn by other way
+
+// =========================> Btn by other way
 // let btnScrollY = document.getElementById("upBtn");
 // console.log(this.scrollY);
 // window.onscroll = function () {
@@ -43,8 +45,8 @@ scrBtn.onclick = function () {
 //     })
 // };
 
-// ==============> operation 
 
+// =========================> operation 
 function totalOperation() {
     // if (price === price.value)                          
     if (price.value != '') {
@@ -55,16 +57,16 @@ function totalOperation() {
     } else total.style.color = ' #ff0505'
 };
 
-// =================> CREATE THE DATA 
-let dataArray;
+
+// =========================> CREATE THE DATA 
+let dataArray = [];
 if (localStorage.ahmedStore != null) {
     dataArray = JSON.parse(localStorage.ahmedStore);
 } else {
     dataArray = [];
 }
-
 create.onclick = function () {
-    objProduct = {
+    let objProduct = {
         title: title.value,
         category: category.value,
         price: price.value,
@@ -74,13 +76,15 @@ create.onclick = function () {
         total: total.innerHTML,
         count: count.value,
     };
-    dataArray.push(objProduct)
+    dataArray.push(objProduct);
     localStorage.setItem('ahmedStore', JSON.stringify(dataArray));
-    console.log(objProduct);
+    // console.log(dataArray);
     clearInputes();
     dataShow();
 }
-// ====================> clear
+
+
+// =========================> clear
 function clearInputes() {
     title.value = '';
     category.value = ""
@@ -92,15 +96,18 @@ function clearInputes() {
     count.value = '';
     search.value = '';
 }
+
+
+// =========================>
 // localStorage.clear();
 // localStorage.removeItem('productLap');
-// localStorage.removeItem('product');
 
-// =========================================================================
+
+// =========================>
 function dataShow() {
     let theTable = '';
+    // dataArray = theTable;
     for (let i = 0; i < dataArray.length; i++) {
-
         theTable += `
                 <tr>
                         <td>${i}</td>
@@ -111,25 +118,35 @@ function dataShow() {
                         <td>${dataArray[i].ads}</td>
                         <td>${dataArray[i].discount}</td>
                         <td>${dataArray[i].total}</td>
-                        <td><button>UPDATE</button></td>
+                        <td><button id="update">UPDATE</button></td>
                         <td><button onclick="deletDataBtn(${i})" id="delete" >DELETE</button></td>
                 </tr>
                 `
+    };
+    if (dataArray.length > 0) {
+        document.getElementById("deleteAll").style.display = 'block';
+
+    } else {
+        document.getElementById("deleteAll").style.display = 'none';
     }
     document.getElementById('tbody1').innerHTML = theTable;
 }
 dataShow();
-// ======================>  Delete fuction
 
+
+// =========================>  Delete function
 function deletDataBtn(i) {
     // console.log(i);
-    dataArray.splice(i);
+    dataArray.splice(i, 1);
     localStorage.ahmedStore = (JSON.stringify(dataArray));
     dataShow();
 }
 
 
 // =========================> Delete All Data Btn
-
-
-
+function delAll() {
+    if (dataArray.length > 0) {
+        dataArray = '';
+        localStorage.clear();
+    }
+}

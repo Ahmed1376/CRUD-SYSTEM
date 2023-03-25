@@ -124,6 +124,7 @@ button {
 .deleteAll1 button {
     color: #fff;
     font-size: 13px;
+    border: #ff0505 solid 3px;
 }
 
 .deleteAll1 button:hover {
@@ -204,6 +205,22 @@ button {
     transition: 0.5s;
     padding: 5px;
 
+}
+
+#update,
+#delete {
+
+    height: 25px;
+    width: 75px;
+
+}
+
+#update {
+    border: #48ff05 solid 3px;
+}
+
+#delete {
+    border: #ff0505 solid 3px;
 }
 
 #delete:hover {
