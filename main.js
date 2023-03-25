@@ -1,4 +1,4 @@
-// =========================> check the Ids
+// =========================> Check The Ids
 
 let title = document.getElementById("title");
 let category = document.getElementById("category");
@@ -13,24 +13,7 @@ let search = document.getElementById("search");
 // console.log(title, category, price, tax, ads, discount, total, count, search);
 
 
-// =========================> create Btn
-// let scrBtn = document.getElementById("upBtn");
-let scrBtn = document.querySelector(".up");
-// console.log(this.scrollY);
-window.onscroll = function () {
-    if (this.scrollY >= 150) {
-        scrBtn.classList.add("show");
-    } else scrBtn.classList.remove("show");
-}
-scrBtn.onclick = function () {
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    })
-};
-
-
-// =========================> Btn by other way
+// =========================> Create Btn
 // let btnScrollY = document.getElementById("upBtn");
 // console.log(this.scrollY);
 // window.onscroll = function () {
@@ -46,13 +29,28 @@ scrBtn.onclick = function () {
 // };
 
 
+// =========================> Btn By Other Way
+let scrBtn = document.querySelector(".up");
+// console.log(this.scrollY);
+window.onscroll = function () {
+    if (this.scrollY >= 150) {
+        scrBtn.classList.add("show");
+    } else scrBtn.classList.remove("show");
+}
+scrBtn.onclick = function () {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    })
+};
+
 // =========================> operation 
 function totalOperation() {
     // if (price === price.value)                          
     if (price.value != '') {
-        let totalSum = (+price.value + +tax.value + +ads.value) - discount.value;
+        let totalSum = (+price.value + +tax.value + +ads.value) - +discount.value;
         total.innerHTML = totalSum;
-        // totalSum = total.innerHTML;    ======> does not work
+        // totalSum = total.innerHTML;    ======> will not work
         total.style.color = 'rgb(0, 255, 4)'
     } else total.style.color = ' #ff0505'
 };
@@ -121,32 +119,30 @@ function dataShow() {
                         <td><button id="update">UPDATE</button></td>
                         <td><button onclick="deletDataBtn(${i})" id="delete" >DELETE</button></td>
                 </tr>
-                `
+                   `
     };
+    document.getElementById('tbody1').innerHTML = theTable;
+    // Btn Delete All Data (inside function dataShow()
     if (dataArray.length > 0) {
         document.getElementById("deleteAll").style.display = 'block';
-
     } else {
         document.getElementById("deleteAll").style.display = 'none';
     }
-    document.getElementById('tbody1').innerHTML = theTable;
+}
+function delAll() {  // <====== this function base ==> function dataShow()
+    if (dataArray.length > 0) {
+        dataArray = '';
+        localStorage.clear();
+
+    }
 }
 dataShow();
 
 
-// =========================>  Delete function
+// =========================> Btn Delete Function
 function deletDataBtn(i) {
     // console.log(i);
     dataArray.splice(i, 1);
     localStorage.ahmedStore = (JSON.stringify(dataArray));
     dataShow();
-}
-
-
-// =========================> Delete All Data Btn
-function delAll() {
-    if (dataArray.length > 0) {
-        dataArray = '';
-        localStorage.clear();
-    }
 }
