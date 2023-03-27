@@ -10,26 +10,26 @@ let total = document.getElementById("total");
 let create = document.getElementById("create");
 let count = document.getElementById("count");
 let search = document.getElementById("search");
-// console.log(title, category, price, tax, ads, discount, total, count, search);
+// // console.log(title, category, price, tax, ads, discount, total, count, search);
 
 
-// =========================> Create Btn
-// let btnScrollY = document.getElementById("upBtn");
-// console.log(this.scrollY);
-// window.onscroll = function () {
-//     if (this.scrollY >= 150) {
-//         btnScrollY.style.display = 'block';
-//     } else btnScrollY.style.display = 'none';
-// }
-// btnScrollY.onclick = function () {
-//     window.scrollTo({
-//         top: 0,
-//         behavior: 'smooth'
-//     })
-// };
+// // =========================> Create Btn
+// // let btnScrollY = document.getElementById("upBtn");
+// // console.log(this.scrollY);
+// // window.onscroll = function () {
+// //     if (this.scrollY >= 150) {
+// //         btnScrollY.style.display = 'block';
+// //     } else btnScrollY.style.display = 'none';
+// // }
+// // btnScrollY.onclick = function () {
+// //     window.scrollTo({
+// //         top: 0,
+// //         behavior: 'smooth'
+// //     })
+// // };
 
 
-// =========================> Btn By Other Way
+// // =========================> Btn By Other Way
 let scrBtn = document.querySelector(".up");
 // console.log(this.scrollY);
 window.onscroll = function () {
@@ -44,27 +44,25 @@ scrBtn.onclick = function () {
     })
 };
 
-// =========================> operation 
-function totalOperation() {
-    // if (price === price.value)                          
+// // =========================> Operation
+function operation() {
     if (price.value != '') {
-        let totalSum = (+price.value + +tax.value + +ads.value) - +discount.value;
-        total.innerHTML = totalSum;
-        // totalSum = total.innerHTML;    ======> will not work
-        total.style.color = 'rgb(0, 255, 4)'
-    } else total.style.color = ' #ff0505'
-};
+        let resultOperation = (+price.value + +tax.value + +ads.value) - +discount.value;
+        total.innerHTML = resultOperation;
+        total.style.color = '#44ff00';
+    } else total.style.color = '#ff0505';
+}
 
-
-// =========================> CREATE THE DATA 
+// // =========================> Create Data In Array/Object and LocalStorage
 let dataArray = [];
-if (localStorage.ahmedStore != null) {
-    dataArray = JSON.parse(localStorage.ahmedStore);
+if (localStorage.storData != null) {
+    dataArray = JSON.parse(localStorage.storData);
 } else {
     dataArray = [];
 }
+
 create.onclick = function () {
-    let objProduct = {
+    let dataObject = {
         title: title.value,
         category: category.value,
         price: price.value,
@@ -73,76 +71,71 @@ create.onclick = function () {
         discount: discount.value,
         total: total.innerHTML,
         count: count.value,
-    };
-    dataArray.push(objProduct);
-    localStorage.setItem('ahmedStore', JSON.stringify(dataArray));
-    // console.log(dataArray);
-    clearInputes();
-    dataShow();
+    }
+    dataArray.push(dataObject);
+    localStorage.setItem('storData', JSON.stringify(dataArray));
+    clearData();
+    showAllData();
 }
+// console.log(dataArray);
+// localStorage.clear();
 
 
-// =========================> clear
-function clearInputes() {
+// // =========================> Clear Inputs
+function clearData() {
     title.value = '';
-    category.value = ""
+    category.value = '';
     price.value = '';
     tax.value = '';
     ads.value = '';
     discount.value = '';
-    total.innerHTML = '';
+    total.value = '';
     count.value = '';
-    search.value = '';
 }
 
-
-// =========================>
-// localStorage.clear();
-// localStorage.removeItem('productLap');
-
-
-// =========================>
-function dataShow() {
-    let theTable = '';
-    // dataArray = theTable;
+// // =========================>  Display The Data
+function showAllData() {
+    let dataDisplay = '';
     for (let i = 0; i < dataArray.length; i++) {
-        theTable += `
-                <tr>
-                        <td>${i}</td>
-                        <td>${dataArray[i].title}</td>
-                        <td>${dataArray[i].category}</td>
-                        <td>${dataArray[i].price}</td>
-                        <td>${dataArray[i].tax}</td>
-                        <td>${dataArray[i].ads}</td>
-                        <td>${dataArray[i].discount}</td>
-                        <td>${dataArray[i].total}</td>
-                        <td><button id="update">UPDATE</button></td>
-                        <td><button onclick="deletDataBtn(${i})" id="delete" >DELETE</button></td>
-                </tr>
-                   `
+        dataDisplay +=
+            `
+             <tr> 
+                <td>${i}</td>
+                <td>${dataArray[i].title}</td>
+                <td>${dataArray[i].category}</td>
+                <td>${dataArray[i].price}</td>
+                <td>${dataArray[i].tax}</td>
+                <td>${dataArray[i].ads}</td>
+                <td>${dataArray[i].discount}</td>
+                <td>${dataArray[i].count}</td>
+                <td><button id="update">UPDATE</button></td>
+                <td><button id="delete"  onclick="btnDel(${i})" >DELETE</button></td>
+           </tr>
+        `
     };
-    document.getElementById('tbody1').innerHTML = theTable;
-    // Btn Delete All Data (inside function dataShow()
+    document.getElementById('tbody1').innerHTML = dataDisplay;
+
     if (dataArray.length > 0) {
-        document.getElementById("deleteAll").style.display = 'block';
+        document.getElementById('deleteAll').style.display = 'block';
     } else {
-        document.getElementById("deleteAll").style.display = 'none';
+        document.getElementById('deleteAll').style.display = 'none';
     }
+
 }
-function delAll() {  // <====== this function base ==> function dataShow()
-    if (dataArray.length > 0) {
-        dataArray = '';
-        localStorage.clear();
+showAllData();
 
-    }
-}
-dataShow();
-
-
-// =========================> Btn Delete Function
-function deletDataBtn(i) {
-    // console.log(i);
+// // =========================> Delete Btn By Raw
+function btnDel(i) {
     dataArray.splice(i, 1);
-    localStorage.ahmedStore = (JSON.stringify(dataArray));
-    dataShow();
+    localStorage.storData = JSON.stringify(dataArray);
+    showAllData();
 }
+
+// // =========================> Delete All Data Btn
+let bigBtnDelete = document.getElementById('deleteAll');
+bigBtnDelete.onclick = function () {
+    dataArray.splice(0);
+    localStorage.clear();
+}
+
+
