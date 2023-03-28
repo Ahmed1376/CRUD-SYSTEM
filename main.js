@@ -54,13 +54,12 @@ function operation() {
 }
 
 // // =========================> Create Data In Array/Object and LocalStorage
-let dataArray = [];
+let dataArray;
 if (localStorage.storData != null) {
     dataArray = JSON.parse(localStorage.storData);
 } else {
     dataArray = [];
 }
-
 create.onclick = function () {
     let dataObject = {
         title: title.value,
@@ -72,7 +71,7 @@ create.onclick = function () {
         total: total.innerHTML,
         count: count.value,
     }
-    dataArray.push(dataObject);
+    dataArray.push(dataObject)
     localStorage.setItem('storData', JSON.stringify(dataArray));
     clearData();
     showAllData();
@@ -114,13 +113,11 @@ function showAllData() {
         `
     };
     document.getElementById('tbody1').innerHTML = dataDisplay;
-
     if (dataArray.length > 0) {
         document.getElementById('deleteAll').style.display = 'block';
     } else {
         document.getElementById('deleteAll').style.display = 'none';
     }
-
 }
 showAllData();
 
@@ -137,5 +134,7 @@ bigBtnDelete.onclick = function () {
     dataArray.splice(0);
     localStorage.clear();
 }
+
+// // =========================> Count
 
 
