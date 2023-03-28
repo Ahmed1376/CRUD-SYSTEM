@@ -4,7 +4,6 @@
     scroll-behavior: smooth;
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
-
 }
 
 :root {
@@ -16,14 +15,13 @@
 }
 
 body {
-    background-color: #000016;
+    /* background-color: #000016;
     background-color: rgb(69, 33, 33);
-    background-color: rgb(55, 41, 41);
+    background-color: rgb(55, 41, 41); */
+    background-color: rgb(57, 3, 3);
     color: #6eff69;
     height: 3000px;
 }
-
-
 
 .crud {
     width: 80%;
@@ -39,7 +37,6 @@ body {
     font-size: 20px;
 }
 
-
 .input input {
     margin: 4px 0px;
     height: 27.5px;
@@ -47,8 +44,6 @@ body {
     border-radius: 5px;
     border: none;
     outline: none;
-
-
 }
 
 input {
@@ -60,12 +55,11 @@ input {
     outline: none;
     width: 100%;
     /* background-color: rgb(243, 202, 111); */
-    background-color: rgba(200, 255, 0, 0.908);
+    /* background-color: rgba(200, 255, 0, 0.908); */
+    background-color: rgb(225, 255, 118);
     color: #000016;
     font-weight: 600;
     transition: 0.5s;
-
-
 }
 
 input:focus {
@@ -101,15 +95,16 @@ button {
     border-radius: 5px;
     border: none;
     outline: none;
-
+    margin: 4px 0px;
 }
 
 .create {
     cursor: pointer;
-    background-color: rgba(86, 86, 251, 0.773);
+    /* background-color: rgba(86, 86, 251, 0.773); */
+    background-color: rgba(61, 239, 30, 0.924);
     color: #fff;
     text-align: center;
-    margin: 4px 0px;
+    margin: 5px 0px;
     border-radius: 50px;
     transition: 0.5s ease;
     width: 100%;
@@ -118,29 +113,16 @@ button {
     font-weight: bold;
 }
 
-
 .create:hover {
     background-color: rgb(132, 132, 240);
     letter-spacing: 1px;
     color: var(--fontColor-color);
 }
 
-.deleteAll1 button {
-    color: #fff;
-    font-size: 13px;
-    /* border: #ff0505 solid 3px; */
-}
-
-.deleteAll1 button:hover {
-    background-color: #ff0505;
-}
-
 .searchBtn {
     display: flex;
     justify-content: space-between;
-
 }
-
 
 .searchBtn button {
     cursor: pointer;
@@ -162,7 +144,6 @@ button {
     color: var(--fontColor-color);
 }
 
-
 .Clean {
     cursor: pointer;
     background-color: rgba(86, 86, 251, 0.773);
@@ -177,7 +158,6 @@ button {
     background-color: rgb(132, 132, 240);
     letter-spacing: 1px;
     color: var(--fontColor-color);
-
 }
 
 table {
@@ -193,12 +173,9 @@ th {
 
 table tr,
 th {
-    /* text-transform: uppercase; */
     letter-spacing: 2px;
-    /* color: #e3f425; */
     color: yellow;
     padding-bottom: 15px;
-
 }
 
 button {
@@ -209,13 +186,24 @@ button {
     cursor: pointer;
     transition: 0.5s;
     padding: 5px;
+}
 
+#deleteAll1 button {
+    color: #fff;
+    background-color: #ff0505;
+    height: 30px;
+    margin: 4px 0px;
+    border-radius: 20px;
+    font-size: 12px;
+}
+
+#deleteAll1 button:hover {
+    letter-spacing: 1px;
+    background-color: #d50d0dd2;
 }
 
 #update,
 #delete {
-    /* height: 25px;
-    width: 75px; */
     height: 25px;
     width: 75px;
     font-size: 10px;
@@ -223,9 +211,7 @@ button {
 }
 
 #update {
-    /* border: #48ff05 solid 3px; */
     background-color: #3ecc0b;
-
 }
 
 #delete {
@@ -233,8 +219,7 @@ button {
 }
 
 #delete:hover {
-    background-color: #ff0505;
-
+    background-color: #d50d0dd2;
 }
 
 table tr th button {
@@ -245,7 +230,6 @@ table tr th button {
     cursor: pointer;
     font-size: 12px;
     transition: 0.5s ease;
-
 }
 
 table button:hover {
@@ -261,7 +245,6 @@ table th {
     position: fixed;
     bottom: 15px;
     right: -150px;
-    /* right: 15px; */
     color: var(--headFontColor-color);
     font-size: 20px;
     padding: 3px;

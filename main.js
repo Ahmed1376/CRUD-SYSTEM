@@ -12,7 +12,6 @@ let count = document.getElementById("count");
 let search = document.getElementById("search");
 // // console.log(title, category, price, tax, ads, discount, total, count, search);
 
-
 // // =========================> Create Btn
 // // let btnScrollY = document.getElementById("upBtn");
 // // console.log(this.scrollY);
@@ -27,7 +26,6 @@ let search = document.getElementById("search");
 // //         behavior: 'smooth'
 // //     })
 // // };
-
 
 // // =========================> Btn By Other Way
 let scrBtn = document.querySelector(".up");
@@ -71,14 +69,18 @@ create.onclick = function () {
         total: total.innerHTML,
         count: count.value,
     }
-    dataArray.push(dataObject)
+    if (dataObject.count >= 1) {
+        for (let i = 0; i < dataObject.count; i++) {
+            dataArray.push(dataObject)
+        }
+    }
+
     localStorage.setItem('storData', JSON.stringify(dataArray));
     clearData();
     showAllData();
 }
 // console.log(dataArray);
 // localStorage.clear();
-
 
 // // =========================> Clear Inputs
 function clearData() {
@@ -113,10 +115,20 @@ function showAllData() {
         `
     };
     document.getElementById('tbody1').innerHTML = dataDisplay;
+
+    let btDall = document.getElementById("deleteAll1");
     if (dataArray.length > 0) {
-        document.getElementById('deleteAll').style.display = 'block';
+        btDall.innerHTML = `
+            <button> Delete All Data = ( ${dataArray.length} )</button>
+        `
+        btDall.onclick = function () {
+            dataArray.splice(0);
+            localStorage.clear();
+        }
+
     } else {
-        document.getElementById('deleteAll').style.display = 'none';
+        // document.getElementById('deleteAll').style.display = 'none';
+        btDall.innerHTML = '';
     }
 }
 showAllData();
@@ -129,10 +141,4 @@ function btnDel(i) {
 }
 
 // // =========================> Delete All Data Btn
-let bigBtnDelete = document.getElementById('deleteAll');
-bigBtnDelete.onclick = function () {
-    dataArray.splice(0);
-    localStorage.clear();
-}
-
-// // =========================> Count
+// let bigBtnDelete = document.getElementById('deleteAll');
