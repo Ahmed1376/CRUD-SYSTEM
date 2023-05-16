@@ -17,19 +17,19 @@ let temp;
 
 
 // // =========================> Create Btn
-// // let btnScrollY = document.getElementById("upBtn");
-// // console.log(this.scrollY);
-// // window.onscroll = function () {
-// //     if (this.scrollY >= 150) {
-// //         btnScrollY.style.display = 'block';
-// //     } else btnScrollY.style.display = 'none';
-// // }
-// // btnScrollY.onclick = function () {
-// //     window.scrollTo({
-// //         top: 0,
-// //         behavior: 'smooth'
-// //     })
-// // };
+// let btnScrollY = document.getElementById("upBtn");
+// console.log(this.scrollY);
+// window.onscroll = function () {
+//     if (this.scrollY >= 150) {
+//         btnScrollY.style.display = 'block';
+//     } else btnScrollY.style.display = 'none';
+// }
+// btnScrollY.onclick = function () {
+//     window.scrollTo({
+//         top: 0,
+//         behavior: 'smooth'
+//     })
+// };
 
 // // =========================> Btn By Other Way
 let scrBtn = document.querySelector(".up");
@@ -145,9 +145,9 @@ function displayData() {
     if (dataArray.length > 0) {
         DellAllBtn.innerHTML =
             `
-            <button onclick='deleteAll ()' >Delete All Data : ( ${dataArray.length} )</button>
-        
-         `
+            <button onclick='deleteAll ()' > Delete All Data : ( ${dataArray.length} )</button>
+         
+            `
     } else {
         DellAllBtn.innerHTML = '';
     }
@@ -186,6 +186,10 @@ function upDate(i) {
     create.innerHTML = "Update";
     mood = 'upDate';
     temp = i;
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
 }
 
 
