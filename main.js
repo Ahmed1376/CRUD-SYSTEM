@@ -117,7 +117,7 @@ function clear() {
 };
 
 
-// =========================> Show Data
+// =========================> Display Data
 
 // let tboody = document.getElementById('tbody');
 

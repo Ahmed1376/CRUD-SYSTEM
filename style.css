@@ -28,6 +28,14 @@ body {
     margin: auto;
 }
 
+
+#theTable {
+    width: 94%;
+    margin: auto;
+    border: #f3ca6f 1px solid;
+    margin-top: 20px;
+}
+
 .head {
     text-align: center;
     margin: 10px 0px 20px;
@@ -254,5 +262,5 @@ table th {
 }
 
 .up.show {
-    right: 15px;
+    right: 5px;
 }
